@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+	<!-- <link rel="icon" href="img/favicon.ico" type="image/ico" sizes="64x64"> -->
+	<title>Aura</title>
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css">
+
+	<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/brands.js" integrity="sha384-sCI3dTBIJuqT6AwL++zH7qL8ZdKaHpxU43dDt9SyOzimtQ9eyRhkG3B7KMl6AO19"
+	 crossorigin="anonymous"></script>
+	<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js" integrity="sha384-7ox8Q2yzO/uWircfojVuCQOZl+ZZBg2D2J5nkpLqzH1HY0C1dHlTKIbpRz/LG23c"
+	 crossorigin="anonymous"></script>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+
+	<div class="container">
+	    <div class="row">
+		<div class="col-sm-5"><h1>Logged in</h1>
+		    <div><a href="/user/attach/facebook">attach facebook profile</a></div>
+		    <div><a href="/user/attach/github">attach github profile</a></div>
+		    <div><a href="/user/attach/linkedin">attach linkedin profile</a></div>
+		</div>
+	    </div>
+	    <div class="row">
+		<button id="setAsTalent">Set as Talent</button>
+	    <div>
+	</div>
+	<script>
+	    $(function(){
+		$('#setAsTalent').click(function(){
+		    $.post('/user/jobRole',{job_role:'talent'}).then(res => console.log(res));
+		});
+	    });
+	</script>
+</body>
+
+</html>
